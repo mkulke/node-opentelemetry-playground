@@ -1,12 +1,14 @@
 import express from 'express';
 import axios from 'axios';
+import { middleware as telemetryMiddleware } from './telemetry';
 
 const PORT = 3000;
 const ENDPOINT = 'https://jsonplaceholder.typicode.com/users';
 
 const app = express();
 
-// define a route handler for the default home page
+app.use(telemetryMiddleware);
+
 app.get('/bla/:uid', (req, res, next) => {
   const uid = req.params['uid'];
   axios
@@ -17,7 +19,6 @@ app.get('/bla/:uid', (req, res, next) => {
     .catch(next);
 });
 
-// start the express server
 app.listen(PORT, () => {
   console.log(`server started at http://localhost:${PORT}`);
 });

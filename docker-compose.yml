@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  web:
+    build: .
+    ports:
+    - "3000:3000"
+    env_file:
+    - ".env"
+
+  jaeger:
+    image: "jaegertracing/all-in-one:1.21.0"
+    ports:
+    - "16686:16686"
+
+  prometheus:
+    build: "prometheus"
+    ports:
+    - "9090:9090"

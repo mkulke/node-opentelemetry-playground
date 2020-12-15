@@ -6,7 +6,7 @@ import config from './config';
 function registerTracer() {
   const exporter = new JaegerExporter({
     host: config.jaegerHost,
-    serviceName: 'opentelemetry-playground,',
+    serviceName: config.serviceName,
   });
 
   const provider = new NodeTracerProvider();

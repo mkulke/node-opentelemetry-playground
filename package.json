@@ -1,12 +1,13 @@
 {
   "name": "opentelemetry-playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playground for Instrumenting tracing & metrics w/ OpenTelemetry in Node.JS Projects",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "repository": "git@github.com:mkulke/node-opentelemetry-playground.git",
   "license": "ISC",
   "dependencies": {
     "@opentelemetry/api": "^0.13.0",
